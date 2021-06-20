@@ -1,7 +1,6 @@
 const shoppingForm = $("#shopping-form");
 const shoppingList = $("#shopping-list");
 shoppingForm.on("submit", handleFormSubmit);
-$("ol").on("click", "li button", deleteItem);
 function handleFormSubmit(e) {
   e.preventDefault();
   shoppingList.append(
@@ -9,6 +8,7 @@ function handleFormSubmit(e) {
   );
   $("#shopping-item").val("");
 }
+$("ol").on("click", "li button", deleteItem);
 function deleteItem(e) {
   let target = e.target;
   $(target).parent().remove();
